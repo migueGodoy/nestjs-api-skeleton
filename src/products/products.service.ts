@@ -37,6 +37,12 @@ export class ProductsService {
     this.products[index] = updatedProduct;
   }
 
+  delete(id: string): void {
+    const [, index] = this.getProductAndIndex(id);
+
+    this.products.splice(index, 1);
+  }
+
   getProductAndIndex(id: string): [Product, number] {
     const index = this.products.findIndex(
       (product: Product) => product.id === id,
