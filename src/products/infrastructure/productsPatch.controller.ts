@@ -1,5 +1,5 @@
 import { Body, Controller, Param, Patch } from '@nestjs/common';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../application/products.service';
 
 @Controller('products')
 export class ProductsPatchController {
