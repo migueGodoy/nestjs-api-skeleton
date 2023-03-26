@@ -21,7 +21,7 @@ export class ProductsService {
     return this.getProductAndIndex(id)[0];
   }
 
-  update(id: string, title: string, description: string, price: number) {
+  update(id: string, title: string, description: string, price: number): void {
     const [product, index] = this.getProductAndIndex(id);
     const updatedProduct: Product = { ...product };
 
