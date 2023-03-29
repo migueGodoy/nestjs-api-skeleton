@@ -43,7 +43,7 @@ export class ProductsService {
     this.products.splice(index, 1);
   }
 
-  getProductAndIndex(id: string): [Product, number] {
+  private getProductAndIndex(id: string): [Product, number] {
     const index = this.products.findIndex(
       (product: Product) => product.id === id,
     );
