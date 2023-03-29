@@ -30,10 +30,10 @@ describe('Product Service', () => {
          }
 
          let id = productService.insert(newProduct.title, newProduct. description, newProduct.price);
-
+         let id2 = productService.insert(newProduct.title, newProduct. description, newProduct.price);
         let allProducts = productService.getAll();
 
-        expect(allProducts).toHaveLength(1);
+        expect(allProducts).toHaveLength(2);
    })
 
    it('Find', () => {
@@ -65,7 +65,7 @@ describe('Product Service', () => {
      }
 
      let id = productService.insert(newProduct.title, newProduct. description, newProduct.price);
-     expect(productService.update(id, updateProduct.title, updateProduct.description, updateProduct.price)).toHaveBeenCalled;
+     expect(productService.update(id, updateProduct.title, null, updateProduct.price)).toHaveBeenCalled;
    })
 
    it('Delete ', () => {

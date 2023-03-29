@@ -4,7 +4,7 @@ import { ProductsController } from '../../src/products/products.controller';
 import { Product } from '../../src/products/product.model';
 import { v4 as uuidv4 } from 'uuid';
 
-describe('CatsController', () => {
+describe('Products Controller', () => {
   let productsController: ProductsController;
   let productsService: ProductsService;
 
@@ -29,7 +29,7 @@ describe('CatsController', () => {
   });
 
   describe('Insertar nuevo producto', () => {
-    it('should return an array of cats', async () => {
+    it('Should insert new product', async () => {
       const finalId = "237bdb26-b452-4bd4-8270-1111c65aab25";
       jest.spyOn(productsService, 'insert').mockImplementation(() => finalId);
       const idProduct = productsController.addProduct('test','description',250);
@@ -38,7 +38,7 @@ describe('CatsController', () => {
   });
 
   describe('Get by id', () => {
-    it('should return an array of cats', async () => {
+    it('should return product by id', async () => {
       const finalId = "237bdb26-b452-4bd4-8270-1111c65aab25";
       const product = new Product(finalId, 'test','description',256)
       jest.spyOn(productsService, 'find').mockImplementation(() => product);
